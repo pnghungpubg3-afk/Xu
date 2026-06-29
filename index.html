@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff69b4" />
+  <meta name="description" content="Trang chính thức của Xu Xu - Streamer. Donate, kết nối và ủng hộ Xu Xu tại đây!" />
+  <title>Xu Xu 💖 Trang Chính Thức</title>
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://donatehz.online/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://donatehz.online/" />
+  <meta property="og:title" content="Xu Xu 💖 Trang Chính Thức" />
+  <meta property="og:description" content="Chào mừng đến với trang chính thức của Xu Xu 💖" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Xu Xu 💖 Trang Chính Thức" />
+  <meta name="twitter:description" content="Chào mừng đến với trang chính thức của Xu Xu 💖" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg" />
+
+  <!-- Apple Touch Icon placeholder -->
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg" />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Xu Xu",
+    "url": "https://donatehz.online/",
+    "image": "https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg",
+    "description": "Streamer chính thức Xu Xu - mặt trời nhỏ",
+    "sameAs": [
+      "https://www.facebook.com/share/1DjpDqQ3Pc/?mibextid=wwXIfr",
+      "https://zalo.me/0397124855",
+      "https://www.tiktok.com/@.xuchintui"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ============================================================
+       CONFIG & TOKENS
+    ============================================================ */
+    :root {
+      --pink-100: #fff0f6;
+      --pink-200: #ffd6e7;
+      --pink-300: #ffb3d1;
+      --pink-400: #ff80b5;
+      --pink-500: #ff4d99;
+      --pink-600: #e6006e;
+      --purple-400: #c084fc;
+      --purple-500: #a855f7;
+      --purple-600: #9333ea;
+      --white: #ffffff;
+      --black: #0a0a0a;
+
+      --font-display: 'Playfair Display', serif;
+      --font-script: 'Dancing Script', cursive;
+      --font-body: 'Inter', sans-serif;
+
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+
+      --shadow-pink: 0 8px 40px rgba(255, 77, 153, 0.35);
+      --shadow-purple: 0 8px 40px rgba(168, 85, 247, 0.35);
+      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.18);
+
+      --transition-smooth: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      --glass-bg-light: rgba(255, 255, 255, 0.14);
+      --glass-border-light: rgba(255, 255, 255, 0.28);
+      --glass-bg-dark: rgba(10, 10, 10, 0.55);
+      --glass-border-dark: rgba(255, 255, 255, 0.12);
+
+      --bg-light-overlay: rgba(255, 192, 220, 0.18);
+      --bg-dark-overlay: rgba(10, 5, 15, 0.72);
+    }
+
+    [data-theme="dark"] {
+      --glass-bg-light: rgba(20, 10, 30, 0.55);
+      --glass-border-light: rgba(255, 150, 200, 0.18);
+      --pink-100: #1a0010;
+      --white: #f0e0ea;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--black);
+      color: var(--white);
+      cursor: auto;
+    }
+
+    /* Custom cursor chỉ ẩn cursor gốc khi hover có chuột (desktop) */
+    @media (pointer: fine) {
+      body { cursor: none; }
+      a, button { cursor: none; }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      outline: none;
+      font-family: var(--font-body);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================================
+       CUSTOM CURSOR
+    ============================================================ */
+    #cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--pink-400);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s ease, background 0.2s ease;
+      mix-blend-mode: normal;
+      box-shadow: 0 0 16px 4px rgba(255, 77, 153, 0.7);
+    }
+
+    #cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 128, 181, 0.5);
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.18s var(--transition-ease), width 0.25s var(--transition-ease), height 0.25s var(--transition-ease), border-color 0.2s ease;
+    }
+
+    body.cursor-hover #cursor-ring {
+      width: 56px;
+      height: 56px;
+      border-color: var(--pink-400);
+    }
+
+    body.cursor-hover #cursor-dot {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    /* ============================================================
+       LOADING SCREEN
+    ============================================================ */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: linear-gradient(135deg, #0d0010 0%, #1a0020 50%, #0d0010 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+
+    #loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loading-logo {
+      font-family: var(--font-script);
+      font-size: clamp(3rem, 8vw, 5rem);
+      color: var(--pink-400);
+      text-shadow: 0 0 40px rgba(255, 77, 153, 0.8);
+      animation: loading-pulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes loading-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(0.97); }
+    }
+
+    .loading-bar-track {
+      width: 200px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .loading-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--pink-400), var(--purple-400));
+      animation: loading-fill 1.6s var(--transition-ease) forwards;
+      box-shadow: 0 0 12px rgba(255, 77, 153, 0.7);
+    }
+
+    @keyframes loading-fill {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    .loading-hearts {
+      display: flex;
+      gap: 10px;
+    }
+
+    .loading-heart {
+      font-size: 16px;
+      animation: loading-heart-bounce 0.8s ease-in-out infinite;
+    }
+
+    .loading-heart:nth-child(2) { animation-delay: 0.15s; }
+    .loading-heart:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes loading-heart-bounce {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-8px); opacity: 1; }
+    }
+
+    /* ============================================================
+       SCROLL PROGRESS BAR
+    ============================================================ */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--pink-400), var(--purple-400), var(--pink-500));
+      z-index: 5000;
+      transition: width 0.05s linear;
+      box-shadow: 0 0 10px rgba(255, 77, 153, 0.6);
+    }
+
+    /* ============================================================
+       BACKGROUND LAYERS
+    ============================================================ */
+    #bg-image {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image: url('https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      filter: blur(10px) brightness(0.55) saturate(1.2);
+      transform: scale(1.08);
+      transition: filter 0.6s ease;
+    }
+
+    [data-theme="dark"] #bg-image {
+      filter: blur(12px) brightness(0.3) saturate(0.8);
+    }
+
+    #bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        160deg,
+        rgba(255, 100, 180, 0.22) 0%,
+        rgba(180, 50, 130, 0.18) 30%,
+        rgba(80, 0, 60, 0.35) 60%,
+        rgba(10, 5, 20, 0.55) 100%
+      );
+      transition: background 0.5s ease;
+    }
+
+    [data-theme="dark"] #bg-overlay {
+      background: linear-gradient(
+        160deg,
+        rgba(60, 0, 50, 0.55) 0%,
+        rgba(20, 0, 30, 0.72) 50%,
+        rgba(5, 0, 10, 0.88) 100%
+      );
+    }
+
+    /* ============================================================
+       CANVAS LAYERS — pointer-events: none tuyệt đối để không block click
+    ============================================================ */
+    #canvas-aurora,
+    #canvas-particles,
+    #canvas-sakura,
+    #canvas-hearts,
+    #canvas-bubbles,
+    #canvas-mouse-light {
+      position: fixed;
+      inset: 0;
+      pointer-events: none !important;
+      user-select: none;
+      touch-action: none;
+    }
+
+    #canvas-aurora    { z-index: 2; opacity: 0.55; mix-blend-mode: screen; }
+    #canvas-particles { z-index: 3; }
+    #canvas-sakura    { z-index: 4; }
+    #canvas-hearts    { z-index: 5; }
+    #canvas-bubbles   { z-index: 6; }
+    #canvas-mouse-light { z-index: 7; mix-blend-mode: screen; opacity: 0.45; }
+
+    /* ============================================================
+       PAGE WRAPPER
+    ============================================================ */
+    #page-wrapper {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px 80px;
+      gap: 32px;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.9s ease, transform 0.9s var(--transition-ease);
+    }
+
+    #page-wrapper.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       THEME TOGGLE + BACK TO TOP
+    ============================================================ */
+    #controls-bar {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 10px;
+    }
+
+    .control-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--glass-bg-light);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--white);
+      transition: transform 0.3s var(--transition-smooth), background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .control-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 6px 24px rgba(255, 77, 153, 0.4);
+      background: rgba(255, 77, 153, 0.25);
+    }
+
+    #back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      z-index: 1000;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-400), var(--purple-500));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--white);
+      box-shadow: var(--shadow-pink);
+      transform: translateY(80px);
+      opacity: 0;
+      transition: transform 0.4s var(--transition-smooth), opacity 0.4s ease;
+    }
+
+    #back-to-top.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    #back-to-top:hover {
+      transform: translateY(-4px) scale(1.08);
+    }
+
+    /* ============================================================
+       AVATAR SECTION
+    ============================================================ */
+    .avatar-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-top: 12px;
+    }
+
+    .avatar-ring {
+      position: relative;
+      width: 196px;
+      height: 196px;
+      border-radius: 50%;
+      animation: avatar-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes avatar-pulse {
+      0%, 100% {
+        box-shadow:
+          0 0 0 0 rgba(255, 77, 153, 0.4),
+          0 0 40px 10px rgba(255, 77, 153, 0.2);
+      }
+      50% {
+        box-shadow:
+          0 0 0 14px rgba(255, 77, 153, 0),
+          0 0 60px 18px rgba(255, 77, 153, 0.35);
+      }
+    }
+
+    .avatar-ring::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        var(--pink-400),
+        var(--purple-400),
+        var(--pink-300),
+        var(--pink-400)
+      );
+      z-index: -1;
+      animation: spin-ring 4s linear infinite;
+    }
+
+    @keyframes spin-ring {
+      to { transform: rotate(360deg); }
+    }
+
+    .avatar-ring::after {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 180deg,
+        rgba(255, 77, 153, 0.2),
+        rgba(168, 85, 247, 0.15),
+        rgba(255, 77, 153, 0.2)
+      );
+      z-index: -2;
+      animation: spin-ring 6s linear infinite reverse;
+    }
+
+    .avatar-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.9);
+      position: relative;
+      z-index: 1;
+      margin: 8px;
+      box-shadow:
+        0 0 0 2px rgba(255, 77, 153, 0.3),
+        0 12px 40px rgba(0, 0, 0, 0.4);
+      transition: transform 0.5s var(--transition-smooth);
+    }
+
+    .avatar-img:hover {
+      transform: scale(1.04);
+    }
+
+    /* ============================================================
+       HERO TEXT
+    ============================================================ */
+    .hero-title {
+      font-family: var(--font-script);
+      font-size: clamp(3.2rem, 9vw, 6rem);
+      color: var(--white);
+      text-align: center;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      text-shadow:
+        0 0 20px rgba(255, 128, 181, 0.9),
+        0 0 40px rgba(255, 77, 153, 0.6),
+        0 0 80px rgba(255, 77, 153, 0.3);
+      animation: glow-title 3.5s ease-in-out infinite;
+    }
+
+    @keyframes glow-title {
+      0%, 100% {
+        text-shadow:
+          0 0 20px rgba(255, 128, 181, 0.9),
+          0 0 40px rgba(255, 77, 153, 0.6),
+          0 0 80px rgba(255, 77, 153, 0.3);
+      }
+      50% {
+        text-shadow:
+          0 0 30px rgba(255, 180, 220, 1),
+          0 0 60px rgba(255, 77, 153, 0.9),
+          0 0 120px rgba(255, 77, 153, 0.5),
+          0 0 180px rgba(200, 50, 130, 0.3);
+      }
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.92rem, 2.5vw, 1.12rem);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.82);
+      text-align: center;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+      padding: 0 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hero-subtitle-small {
+      font-family: var(--font-script);
+      font-size: clamp(0.75rem, 2vw, 0.92rem);
+      font-weight: 400;
+      color: rgba(255, 200, 225, 0.75);
+      letter-spacing: 0.06em;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 18px;
+      border-radius: var(--radius-full);
+      background: var(--glass-bg-light);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border-light);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00e676;
+      box-shadow: 0 0 8px #00e676;
+      animation: live-dot 1.2s ease-in-out infinite;
+    }
+
+    @keyframes live-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.75); }
+    }
+
+    /* ============================================================
+       CARD GRID
+    ============================================================ */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      width: 100%;
+      max-width: 520px;
+      perspective: 800px; /* perspective đặt trên parent — Safari-safe */
+    }
+
+    /* ============================================================
+       ACTION CARD
+    ============================================================ */
+    .action-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      /* overflow: hidden bị xoá — đây là nguyên nhân chính Safari block click khi kết hợp với transform-style */
+      overflow: visible;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent; /* loại bỏ flash xanh trên iOS */
+      transition:
+        transform 0.45s var(--transition-smooth),
+        box-shadow 0.45s ease;
+      /* transform-style: preserve-3d bị xoá — Safari bug với overflow + preserve-3d */
+      will-change: transform;
+      text-decoration: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    /* Thay ::before bằng pseudo dùng border-radius clip để shimmer không tràn */
+    .action-card__overflow-clip {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .action-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      -webkit-transform: translateY(-8px) scale(1.03);
+    }
+
+    .action-card:active {
+      transform: translateY(-2px) scale(0.97);
+      -webkit-transform: translateY(-2px) scale(0.97);
+    }
+
+    .action-card--donate {
+      background: linear-gradient(135deg, #ff4d99 0%, #ff80b5 40%, #e6006e 100%);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .action-card--donate:hover {
+      box-shadow:
+        0 20px 60px rgba(255, 77, 153, 0.55),
+        0 0 80px rgba(255, 77, 153, 0.2);
+    }
+
+    .action-card--slot {
+      background: linear-gradient(135deg, #a855f7 0%, #c084fc 40%, #7c3aed 100%);
+      box-shadow: var(--shadow-purple);
+    }
+
+    .action-card--slot:hover {
+      box-shadow:
+        0 20px 60px rgba(168, 85, 247, 0.55),
+        0 0 80px rgba(168, 85, 247, 0.2);
+    }
+
+    .action-card__shimmer {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.18) 50%,
+        transparent 70%
+      );
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .action-card:hover .action-card__shimmer {
+      transform: translateX(100%);
+    }
+
+    .action-card__icon {
+      font-size: 2.4rem;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+      transition: transform 0.4s var(--transition-smooth);
+    }
+
+    .action-card:hover .action-card__icon {
+      transform: scale(1.15) rotate(-6deg);
+    }
+
+    .action-card__label {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .action-card__sublabel {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.72);
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.05em;
+    }
+
+    /* Ripple */
+    .ripple-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      transform: scale(0);
+      animation: ripple-expand 0.6s ease-out forwards;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @keyframes ripple-expand {
+      to {
+        transform: scale(4.5);
+        opacity: 0;
+      }
+    }
+
+    /* ============================================================
+       SOCIAL FLOAT BAR
+    ============================================================ */
+    #social-float {
+      position: fixed;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 800;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .social-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--glass-bg-light);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 18px;
+      text-decoration: none;
+      transition:
+        transform 0.35s var(--transition-smooth),
+        box-shadow 0.35s ease,
+        background 0.3s ease;
+      animation: float-social 3s ease-in-out infinite;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+
+    .social-btn:nth-child(1) { animation-delay: 0s; }
+    .social-btn:nth-child(2) { animation-delay: 0.4s; }
+    .social-btn:nth-child(3) { animation-delay: 0.8s; }
+
+    @keyframes float-social {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .social-btn:hover {
+      transform: translateY(-5px) scale(1.18);
+      box-shadow: 0 8px 28px rgba(255, 77, 153, 0.5);
+      background: rgba(255, 77, 153, 0.28);
+    }
+
+    .social-btn--facebook:hover { box-shadow: 0 8px 28px rgba(24, 119, 242, 0.55); background: rgba(24, 119, 242, 0.25); }
+    .social-btn--zalo:hover { box-shadow: 0 8px 28px rgba(0, 104, 255, 0.55); background: rgba(0, 104, 255, 0.22); }
+    .social-btn--tiktok:hover { box-shadow: 0 8px 28px rgba(255, 0, 80, 0.55); background: rgba(255, 0, 80, 0.2); }
+
+    .social-tooltip {
+      position: absolute;
+      right: 58px;
+      background: rgba(20, 5, 30, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 77, 153, 0.3);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(8px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-item:hover .social-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============================================================
+       POPUP OVERLAY
+    ============================================================ */
+    #popup-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      background: rgba(5, 0, 15, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    #popup-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ============================================================
+       POPUP CARD
+    ============================================================ */
+    #popup-card {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      border-radius: var(--radius-xl);
+      background: rgba(20, 5, 35, 0.82);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border: 1px solid rgba(255, 77, 153, 0.28);
+      box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.55),
+        0 0 60px rgba(255, 77, 153, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      padding: 36px 28px 28px;
+      transform: scale(0.88) translateY(20px);
+      transition: transform 0.45s var(--transition-smooth);
+      overflow: hidden;
+    }
+
+    #popup-card::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -60%;
+      width: 220%;
+      height: 220%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 77, 153, 0.07) 0%,
+        transparent 65%
+      );
+      pointer-events: none;
+    }
+
+    #popup-overlay.open #popup-card {
+      transform: scale(1) translateY(0);
+    }
+
+    .popup-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 24px;
+      text-shadow: 0 0 20px rgba(255, 77, 153, 0.6);
+    }
+
+    .popup-qr-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .popup-qr-frame {
+      padding: 10px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow:
+        0 4px 20px rgba(0,0,0,0.3),
+        0 0 30px rgba(255, 77, 153, 0.18);
+    }
+
+    .popup-qr-frame img {
+      width: 190px;
+      height: 190px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .popup-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .popup-info-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .popup-info-label {
+      font-size: 0.73rem;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .popup-info-value {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+
+    .popup-copy-mini {
+      background: rgba(255, 77, 153, 0.15);
+      border: 1px solid rgba(255, 77, 153, 0.3);
+      color: var(--pink-300);
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      cursor: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+      letter-spacing: 0.04em;
+    }
+
+    .popup-copy-mini:hover {
+      background: rgba(255, 77, 153, 0.3);
+      transform: scale(1.06);
+    }
+
+    .popup-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .popup-btn {
+      flex: 1;
+      padding: 13px 0;
+      border-radius: 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: transform 0.3s var(--transition-smooth), box-shadow 0.3s ease;
+      cursor: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .popup-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .popup-btn--copy {
+      background: linear-gradient(135deg, var(--pink-500), var(--pink-400));
+      color: var(--white);
+      box-shadow: 0 4px 18px rgba(255, 77, 153, 0.4);
+    }
+
+    .popup-btn--copy:hover {
+      box-shadow: 0 8px 28px rgba(255, 77, 153, 0.6);
+    }
+
+    .popup-btn--close {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .popup-btn--close:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .popup-close-x {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 16px;
+      cursor: none;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .popup-close-x:hover {
+      background: rgba(255, 77, 153, 0.2);
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    /* ============================================================
+       TOAST
+    ============================================================ */
+    #toast-container {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .toast {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 22px;
+      border-radius: var(--radius-full);
+      background: rgba(20, 5, 35, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 77, 153, 0.4);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(255, 77, 153, 0.15);
+      animation: toast-in 0.4s var(--transition-smooth) forwards;
+      letter-spacing: 0.02em;
+    }
+
+    .toast.removing {
+      animation: toast-out 0.35s ease forwards;
+    }
+
+    @keyframes toast-in {
+      from { opacity: 0; transform: translateY(12px) scale(0.94); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes toast-out {
+      from { opacity: 1; transform: translateY(0) scale(1); }
+      to { opacity: 0; transform: translateY(-10px) scale(0.94); }
+    }
+
+    .toast-icon { font-size: 16px; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .page-footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.06em;
+      padding-top: 8px;
+    }
+
+    /* ============================================================
+       SECTION FADE-IN
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s var(--transition-ease);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.32s; }
+    .reveal-delay-4 { transition-delay: 0.44s; }
+
+    /* ============================================================
+       RESPONSIVE — MOBILE FIRST
+    ============================================================ */
+    @media (max-width: 480px) {
+      #page-wrapper {
+        padding: 36px 16px 72px;
+        gap: 26px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+        gap: 12px;
+      }
+
+      .action-card {
+        padding: 22px 14px;
+      }
+
+      .action-card__icon { font-size: 2rem; }
+      .action-card__label { font-size: 0.88rem; }
+
+      .avatar-ring { width: 168px; height: 168px; }
+      .avatar-img { width: 154px; height: 154px; }
+
+      #social-float {
+        right: 12px;
+      }
+
+      .social-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+      }
+
+      .social-tooltip { display: none; }
+    }
+
+    @media (max-width: 320px) {
+      .card-grid { grid-template-columns: 1fr; max-width: 280px; }
+      .avatar-ring { width: 144px; height: 144px; }
+      .avatar-img { width: 130px; height: 130px; }
+    }
+
+    @media (min-width: 768px) {
+      #page-wrapper { padding: 60px 40px 100px; gap: 36px; }
+      .card-grid { max-width: 580px; gap: 20px; }
+      .action-card { padding: 36px 28px; }
+      .action-card__icon { font-size: 3rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .card-grid { max-width: 640px; }
+    }
+
+    /* ============================================================
+       REDUCED MOTION
+    ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      #canvas-aurora, #canvas-particles, #canvas-sakura,
+      #canvas-hearts, #canvas-bubbles, #canvas-mouse-light {
+        display: none;
+      }
+    }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+  ============================================================ -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       LOADING SCREEN
+  ============================================================ -->
+  <div id="loading-screen" role="status" aria-label="Đang tải trang">
+    <div class="loading-logo">Xu Xu</div>
+    <div class="loading-bar-track">
+      <div class="loading-bar-fill"></div>
+    </div>
+    <div class="loading-hearts" aria-hidden="true">
+      <span class="loading-heart">💗</span>
+      <span class="loading-heart">💖</span>
+      <span class="loading-heart">💗</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       BACKGROUND
+  ============================================================ -->
+  <div id="bg-image" aria-hidden="true"></div>
+  <div id="bg-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       CANVAS ANIMATION LAYERS
+  ============================================================ -->
+  <canvas id="canvas-aurora" aria-hidden="true"></canvas>
+  <canvas id="canvas-particles" aria-hidden="true"></canvas>
+  <canvas id="canvas-sakura" aria-hidden="true"></canvas>
+  <canvas id="canvas-hearts" aria-hidden="true"></canvas>
+  <canvas id="canvas-bubbles" aria-hidden="true"></canvas>
+  <canvas id="canvas-mouse-light" aria-hidden="true"></canvas>
+
+  <!-- ============================================================
+       CONTROLS
+  ============================================================ -->
+  <div id="controls-bar">
+    <button class="control-btn" id="theme-toggle-btn" aria-label="Chuyển giao diện sáng/tối" title="Sáng / Tối">
+      🌙
+    </button>
+  </div>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Về đầu trang" title="Về đầu trang">↑</button>
+
+  <!-- ============================================================
+       SOCIAL FLOAT BAR
+  ============================================================ -->
+  <nav id="social-float" aria-label="Mạng xã hội">
+    <div class="social-item">
+      <a class="social-btn social-btn--facebook" href="https://www.facebook.com/share/1DjpDqQ3Pc/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <span class="social-tooltip">Facebook</span>
+    </div>
+    <div class="social-item">
+      <a class="social-btn social-btn--zalo" href="https://zalo.me/0397124855" target="_blank" rel="noopener noreferrer" aria-label="Zalo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><text x="2" y="17" font-size="13" font-weight="bold">Z</text></svg>
+      </a>
+      <span class="social-tooltip">Zalo</span>
+    </div>
+    <div class="social-item">
+      <a class="social-btn social-btn--tiktok" href="https://www.tiktok.com/@.xuchintui" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+      </a>
+      <span class="social-tooltip">TikTok</span>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MAIN PAGE CONTENT
+  ============================================================ -->
+  <main id="page-wrapper" role="main">
+
+    <!-- Avatar + Hero -->
+    <section class="avatar-wrapper reveal reveal-delay-1" aria-label="Thông tin streamer">
+      <div class="avatar-ring">
+        <img
+          class="avatar-img"
+          src="https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg"
+          alt="Avatar của Xu Xu"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        <span>Đang hoạt động</span>
+      </div>
+    </section>
+
+    <section class="reveal reveal-delay-2" style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px;">
+      <h1 class="hero-title">Xu Xu</h1>
+      <p class="hero-subtitle">
+        Cám ơn bạn đã luôn ủng hộ Xu Xu
+        <span class="hero-subtitle-small">là mặt trời nhỏ 💖</span>
+      </p>
+    </section>
+
+    <!-- Action Cards -->
+    <section class="card-grid reveal reveal-delay-3" aria-label="Hành động">
+
+      <!-- Donate Card -->
+      <a
+        class="action-card action-card--donate"
+        href="https://donatehz.online/xu"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Donate cho Xu Xu"
+        id="donate-card"
+      >
+        <div class="action-card__overflow-clip">
+          <div class="action-card__shimmer" aria-hidden="true"></div>
+        </div>
+        <div class="action-card__icon" aria-hidden="true">💝</div>
+        <span class="action-card__label">Donate</span>
+        <span class="action-card__sublabel">Đọc trên Live</span>
+      </a>
+
+      <!-- Búc Slot Card -->
+      <button
+        class="action-card action-card--slot"
+        aria-label="Búc Slot - Mở popup thanh toán"
+        id="slot-card-btn"
+        type="button"
+      >
+        <div class="action-card__overflow-clip">
+          <div class="action-card__shimmer" aria-hidden="true"></div>
+        </div>
+        <div class="action-card__icon" aria-hidden="true">🎰</div>
+        <span class="action-card__label">Búc Slot</span>
+        <span class="action-card__sublabel">Chuyển khoản</span>
+      </button>
+
+    </section>
+
+    <footer class="page-footer reveal reveal-delay-4">
+      <p>Code by HZ 💖</p>
+    </footer>
+
+  </main>
+
+  <!-- ============================================================
+       POPUP
+  ============================================================ -->
+  <div
+    id="popup-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="popup-heading"
+    aria-hidden="true"
+  >
+    <div id="popup-card">
+      <button class="popup-close-x" id="popup-close-x-btn" aria-label="Đóng popup">✕</button>
+
+      <h2 class="popup-title" id="popup-heading">💳 BÚC SLOT</h2>
+
+      <div class="popup-qr-wrapper">
+        <div class="popup-qr-frame">
+          <img
+            src="https://img.vietqr.io/image/VCB-1048883539-compact2.png"
+            alt="QR Code chuyển khoản Vietcom Bank"
+            width="160"
+            height="160"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="popup-info-list" id="popup-info-list">
+        <div class="popup-info-row">
+          <span class="popup-info-label">STK</span>
+          <span class="popup-info-value" id="info-stk">1048883539</span>
+          <button class="popup-copy-mini" data-copy-target="info-stk" aria-label="Copy số tài khoản">Copy</button>
+        </div>
+        <div class="popup-info-row">
+          <span class="popup-info-label">Ngân hàng</span>
+          <span class="popup-info-value" id="info-bank">VIETCOMBANK</span>
+          <button class="popup-copy-mini" data-copy-target="info-bank" aria-label="Copy tên ngân hàng">Copy</button>
+        </div>
+        <div class="popup-info-row">
+          <span class="popup-info-label">Chủ TK</span>
+          <span class="popup-info-value" id="info-owner">TRAN THI MINH LY</span>
+          <button class="popup-copy-mini" data-copy-target="info-owner" aria-label="Copy tên chủ tài khoản">Copy</button>
+        </div>
+      </div>
+
+      <div class="popup-actions">
+        <button class="popup-btn popup-btn--copy" id="popup-copy-stk-btn" type="button">
+          📋 Copy STK
+        </button>
+        <button class="popup-btn popup-btn--close" id="popup-close-btn" type="button">
+          Đóng
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST CONTAINER
+  ============================================================ -->
+  <div id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+  <script>
+    /* ============================================================
+       CONFIG — Chỉnh sửa ở đây để thay đổi thông tin
+    ============================================================ */
+    const CONFIG = {
+      streamer: {
+        name: "Xu Xu",
+        subtitle: "Cám ơn bạn đã luôn ủng hộ Xu Xu là mặt trời nhỏ 💖",
+        avatar: "https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg",
+        background: "https://raw.githubusercontent.com/pnghungpubg3-afk/xuxu/main/z7985393210005_d567c69e7f04930fc2db40a80d9be567.jpg"
+      },
+      donate: {
+        url: "https://donatehz.online/xu"
+      },
+      payment: {
+        qrImage: "https://img.vietqr.io/image/VCB-1048883539-compact2.png",
+        accountNumber: "1048883539",
+        bankName: "VIETCOMBANK",
+        accountHolder: "TRAN THI MINH LY"
+      },
+      social: {
+        facebook: "https://www.facebook.com/share/1DjpDqQ3Pc/?mibextid=wwXIfr",
+        zalo: "https://zalo.me/0397124855",
+        tiktok: "https://www.tiktok.com/@.xuchintui"
+      }
+    };
+
+    /* ============================================================
+       MODULE: APPLY CONFIG TO DOM (single source of truth)
+    ============================================================ */
+    (function applyConfigToDOM() {
+      // Subtitle — dùng innerHTML để giữ <span> xuống dòng đẹp
+      const subtitleEl = document.querySelector(".hero-subtitle");
+      if (subtitleEl) {
+        subtitleEl.innerHTML =
+          'Cám ơn bạn đã luôn ủng hộ Xu Xu' +
+          '<span class="hero-subtitle-small">là mặt trời nhỏ 💖</span>';
+      }
+
+      // Social links
+      const fbLink = document.querySelector(".social-btn--facebook");
+      const zaloLink = document.querySelector(".social-btn--zalo");
+      const tiktokLink = document.querySelector(".social-btn--tiktok");
+      if (fbLink) fbLink.href = CONFIG.social.facebook;
+      if (zaloLink) zaloLink.href = CONFIG.social.zalo;
+      if (tiktokLink) tiktokLink.href = CONFIG.social.tiktok;
+
+      // Donate link
+      const donateCardEl = document.getElementById("donate-card");
+      if (donateCardEl) donateCardEl.href = CONFIG.donate.url;
+
+      // Popup payment info
+      const stkEl = document.getElementById("info-stk");
+      const bankEl = document.getElementById("info-bank");
+      const ownerEl = document.getElementById("info-owner");
+      const qrImg = document.querySelector(".popup-qr-frame img");
+      if (stkEl) stkEl.textContent = CONFIG.payment.accountNumber;
+      if (bankEl) bankEl.textContent = CONFIG.payment.bankName;
+      if (ownerEl) ownerEl.textContent = CONFIG.payment.accountHolder;
+      if (qrImg) qrImg.src = CONFIG.payment.qrImage;
+    }());
+
+    /* ============================================================
+       MODULE: LOADING SCREEN
+    ============================================================ */
+    (function initLoadingScreen() {
+      const loadingScreen = document.getElementById("loading-screen");
+      const pageWrapper = document.getElementById("page-wrapper");
+
+      function hideLoading() {
+        loadingScreen.classList.add("hidden");
+        pageWrapper.classList.add("visible");
+        loadingScreen.setAttribute("aria-hidden", "true");
+        triggerRevealObserver();
+      }
+
+      window.addEventListener("load", function () {
+        setTimeout(hideLoading, 1800);
+      });
+
+      // Fallback
+      setTimeout(hideLoading, 3500);
+    }());
+
+    /* ============================================================
+       MODULE: SCROLL PROGRESS BAR
+    ============================================================ */
+    (function initScrollProgress() {
+      const progressBar = document.getElementById("scroll-progress");
+      const backToTopBtn = document.getElementById("back-to-top");
+
+      function onScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + "%";
+
+        if (scrollTop > 200) {
+          backToTopBtn.classList.add("visible");
+        } else {
+          backToTopBtn.classList.remove("visible");
+        }
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      backToTopBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }());
+
+    /* ============================================================
+       MODULE: INTERSECTION OBSERVER — REVEAL SECTIONS
+    ============================================================ */
+    function triggerRevealObserver() {
+      const revealElements = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach(function (el) {
+        observer.observe(el);
+      });
+    }
+
+    /* ============================================================
+       MODULE: CUSTOM CURSOR
+    ============================================================ */
+    (function initCustomCursor() {
+      const cursorDot = document.getElementById("cursor-dot");
+      const cursorRing = document.getElementById("cursor-ring");
+
+      let mouseX = 0;
+      let mouseY = 0;
+      let ringX = 0;
+      let ringY = 0;
+      let animFrameId = null;
+
+      function updateCursorPosition() {
+        cursorDot.style.left = mouseX + "px";
+        cursorDot.style.top = mouseY + "px";
+
+        ringX += (mouseX - ringX) * 0.14;
+        ringY += (mouseY - ringY) * 0.14;
+
+        cursorRing.style.left = ringX + "px";
+        cursorRing.style.top = ringY + "px";
+
+        animFrameId = requestAnimationFrame(updateCursorPosition);
+      }
+
+      document.addEventListener("mousemove", function (event) {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+      });
+
+      document.querySelectorAll("a, button, .action-card, .social-btn, .popup-copy-mini").forEach(function (el) {
+        el.addEventListener("mouseenter", function () {
+          document.body.classList.add("cursor-hover");
+        });
+        el.addEventListener("mouseleave", function () {
+          document.body.classList.remove("cursor-hover");
+        });
+      });
+
+      document.addEventListener("mouseleave", function () {
+        cursorDot.style.opacity = "0";
+        cursorRing.style.opacity = "0";
+      });
+
+      document.addEventListener("mouseenter", function () {
+        cursorDot.style.opacity = "1";
+        cursorRing.style.opacity = "1";
+      });
+
+      animFrameId = requestAnimationFrame(updateCursorPosition);
+    }());
+
+    /* ============================================================
+       MODULE: THEME TOGGLE (Light / Dark)
+    ============================================================ */
+    (function initThemeToggle() {
+      const toggleBtn = document.getElementById("theme-toggle-btn");
+      const htmlEl = document.documentElement;
+      let isDark = false;
+
+      const savedTheme = localStorage.getItem("xuxu-theme");
+      if (savedTheme === "dark") {
+        isDark = true;
+        htmlEl.setAttribute("data-theme", "dark");
+        toggleBtn.textContent = "☀️";
+      }
+
+      toggleBtn.addEventListener("click", function () {
+        isDark = !isDark;
+        if (isDark) {
+          htmlEl.setAttribute("data-theme", "dark");
+          toggleBtn.textContent = "☀️";
+          localStorage.setItem("xuxu-theme", "dark");
+        } else {
+          htmlEl.removeAttribute("data-theme");
+          toggleBtn.textContent = "🌙";
+          localStorage.setItem("xuxu-theme", "light");
+        }
+      });
+    }());
+
+    /* ============================================================
+       MODULE: RIPPLE EFFECT on cards
+    ============================================================ */
+    (function initRipple() {
+      function createRipple(event, targetElement) {
+        const ripple = document.createElement("span");
+        ripple.classList.add("ripple-circle");
+        const rect = targetElement.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const xPos = event.clientX - rect.left - size / 2;
+        const yPos = event.clientY - rect.top - size / 2;
+        ripple.style.width = size + "px";
+        ripple.style.height = size + "px";
+        ripple.style.left = xPos + "px";
+        ripple.style.top = yPos + "px";
+        targetElement.appendChild(ripple);
+        setTimeout(function () {
+          ripple.remove();
+        }, 700);
+      }
+
+      const donateCard = document.getElementById("donate-card");
+      const slotCardBtn = document.getElementById("slot-card-btn");
+
+      donateCard.addEventListener("click", function (event) {
+        createRipple(event, donateCard);
+      });
+
+      slotCardBtn.addEventListener("click", function (event) {
+        createRipple(event, slotCardBtn);
+      });
+    }());
+
+    /* ============================================================
+       MODULE: SOCIAL MAGNET EFFECT
+    ============================================================ */
+    (function initSocialMagnet() {
+      const socialButtons = document.querySelectorAll(".social-btn");
+
+      socialButtons.forEach(function (btn) {
+        btn.addEventListener("mousemove", function (event) {
+          const rect = btn.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const deltaX = (event.clientX - centerX) * 0.35;
+          const deltaY = (event.clientY - centerY) * 0.35;
+          btn.style.transform = "translate(" + deltaX + "px, " + deltaY + "px) scale(1.18)";
+        });
+
+        btn.addEventListener("mouseleave", function () {
+          btn.style.transform = "";
+        });
+      });
+    }());
+
+    /* ============================================================
+       MODULE: POPUP
+    ============================================================ */
+    (function initPopup() {
+      const popupOverlay = document.getElementById("popup-overlay");
+      const slotCardBtn = document.getElementById("slot-card-btn");
+      const popupCloseBtnX = document.getElementById("popup-close-x-btn");
+      const popupCloseBtn = document.getElementById("popup-close-btn");
+      const popupCopySTKBtn = document.getElementById("popup-copy-stk-btn");
+      const popupMiniCopyBtns = document.querySelectorAll(".popup-copy-mini");
+
+      function openPopup() {
+        popupOverlay.classList.add("open");
+        popupOverlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        popupCloseBtnX.focus();
+      }
+
+      function closePopup() {
+        popupOverlay.classList.remove("open");
+        popupOverlay.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        slotCardBtn.focus();
+      }
+
+      slotCardBtn.addEventListener("click", openPopup);
+      popupCloseBtnX.addEventListener("click", closePopup);
+      popupCloseBtn.addEventListener("click", closePopup);
+
+      popupOverlay.addEventListener("click", function (event) {
+        if (event.target === popupOverlay) {
+          closePopup();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && popupOverlay.classList.contains("open")) {
+          closePopup();
+        }
+      });
+
+      // Main Copy STK button
+      popupCopySTKBtn.addEventListener("click", function () {
+        copyText(CONFIG.payment.accountNumber, "Đã copy số tài khoản 📋");
+      });
+
+      // Mini copy buttons inside rows
+      popupMiniCopyBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          const targetId = btn.getAttribute("data-copy-target");
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            const textToCopy = targetEl.textContent.trim();
+            let toastMessage = "Đã copy!";
+            if (targetId === "info-stk") toastMessage = "Đã copy số tài khoản 📋";
+            if (targetId === "info-bank") toastMessage = "Đã copy tên ngân hàng 🏦";
+            if (targetId === "info-owner") toastMessage = "Đã copy tên chủ tài khoản 👤";
+            copyText(textToCopy, toastMessage);
+          }
+        });
+      });
+    }());
+
+    /* ============================================================
+       MODULE: CLIPBOARD + TOAST
+    ============================================================ */
+    function copyText(text, message) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () {
+          showToast(message || "Đã copy!", "💗");
+        }).catch(function () {
+          fallbackCopy(text, message);
+        });
+      } else {
+        fallbackCopy(text, message);
+      }
+    }
+
+    function fallbackCopy(text, message) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showToast(message || "Đã copy!", "💗");
+      } catch (err) {
+        showToast("Không thể copy", "❌");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showToast(message, icon) {
+      const toastContainer = document.getElementById("toast-container");
+      const toastEl = document.createElement("div");
+      toastEl.classList.add("toast");
+      toastEl.innerHTML = '<span class="toast-icon">' + (icon || "💗") + '</span><span>' + message + '</span>';
+      toastContainer.appendChild(toastEl);
+
+      setTimeout(function () {
+        toastEl.classList.add("removing");
+        setTimeout(function () {
+          if (toastEl.parentNode) {
+            toastEl.parentNode.removeChild(toastEl);
+          }
+        }, 400);
+      }, 2800);
+    }
+
+    /* ============================================================
+       MODULE: CANVAS — AURORA
+    ============================================================ */
+    (function initAurora() {
+      const canvas = document.getElementById("canvas-aurora");
+      const ctx = canvas.getContext("2d");
+
+      let width = 0;
+      let height = 0;
+      let animTime = 0;
+
+      const auroraLayers = [
+        { yFactor: 0.3, hue: 320, speed: 0.0006, amplitude: 0.14 },
+        { yFactor: 0.5, hue: 280, speed: 0.0009, amplitude: 0.12 },
+        { yFactor: 0.7, hue: 300, speed: 0.0007, amplitude: 0.10 }
+      ];
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      function drawAurora(timestamp) {
+        animTime = timestamp * 0.001;
+        ctx.clearRect(0, 0, width, height);
+
+        auroraLayers.forEach(function (layer) {
+          const gradient = ctx.createLinearGradient(0, 0, 0, height);
+          const yBase = height * layer.yFactor;
+          const yOffset = Math.sin(animTime * layer.speed * 1000) * height * layer.amplitude;
+
+          gradient.addColorStop(0, "transparent");
+          gradient.addColorStop(0.4, "hsla(" + layer.hue + ", 80%, 65%, 0.0)");
+          gradient.addColorStop(0.55, "hsla(" + layer.hue + ", 80%, 65%, 0.18)");
+          gradient.addColorStop(0.7, "hsla(" + layer.hue + ", 80%, 65%, 0.08)");
+          gradient.addColorStop(1, "transparent");
+
+          ctx.save();
+          ctx.translate(0, yOffset);
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, width, height);
+          ctx.restore();
+        });
+
+        requestAnimationFrame(drawAurora);
+      }
+
+      window.addEventListener("resize", resize, { passive: true });
+      resize();
+      requestAnimationFrame(drawAurora);
+    }());
+
+    /* ============================================================
+       MODULE: CANVAS — PARTICLES (Firefly)
+    ============================================================ */
+    (function initParticles() {
+      const canvas = document.getElementById("canvas-particles");
+      const ctx = canvas.getContext("2d");
+
+      let width = 0;
+      let height = 0;
+      const PARTICLE_COUNT = 55;
+      const particles = [];
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      function createParticle() {
+        return {
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 2.5 + 0.8,
+          opacity: Math.random() * 0.6 + 0.2,
+          opacityTarget: Math.random() * 0.7 + 0.2,
+          opacitySpeed: Math.random() * 0.008 + 0.003,
+          speedX: (Math.random() - 0.5) * 0.4,
+          speedY: (Math.random() - 0.5) * 0.4,
+          hue: Math.random() > 0.5 ? 320 + Math.random() * 30 : 270 + Math.random() * 30
+        };
+      }
+
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(createParticle());
+      }
+
+      function drawParticles() {
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach(function (particle) {
+          particle.x += particle.speedX;
+          particle.y += particle.speedY;
+
+          if (particle.x < 0) particle.x = width;
+          if (particle.x > width) particle.x = 0;
+          if (particle.y < 0) particle.y = height;
+          if (particle.y > height) particle.y = 0;
+
+          if (particle.opacity < particle.opacityTarget) {
+            particle.opacity += particle.opacitySpeed;
+          } else {
+            particle.opacity -= particle.opacitySpeed;
+          }
+
+          if (Math.abs(particle.opacity - particle.opacityTarget) < 0.02) {
+            particle.opacityTarget = Math.random() * 0.7 + 0.1;
+          }
+
+          const grd = ctx.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, particle.radius * 3);
+          grd.addColorStop(0, "hsla(" + particle.hue + ", 90%, 75%, " + particle.opacity + ")");
+          grd.addColorStop(1, "hsla(" + particle.hue + ", 90%, 75%, 0)");
+
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.radius * 3, 0, Math.PI * 2);
+          ctx.fillStyle = grd;
+          ctx.fill();
+        });
+
+        requestAnimationFrame(drawParticles);
+      }
+
+      window.addEventListener("resize", resize, { passive: true });
+      resize();
+      requestAnimationFrame(drawParticles);
+    }());
+
+    /* ============================================================
+       MODULE: CANVAS — SAKURA FALLING
+    ============================================================ */
+    (function initSakura() {
+      const canvas = document.getElementById("canvas-sakura");
+      const ctx = canvas.getContext("2d");
+
+      let width = 0;
+      let height = 0;
+      const PETAL_COUNT = 28;
+      const petals = [];
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      function createPetal(startAtTop) {
+        return {
+          x: Math.random() * width,
+          y: startAtTop ? -20 : Math.random() * height,
+          size: Math.random() * 10 + 6,
+          speedY: Math.random() * 1.2 + 0.5,
+          speedX: Math.random() * 1.0 - 0.5,
+          rotation: Math.random() * Math.PI * 2,
+          rotationSpeed: (Math.random() - 0.5) * 0.04,
+          opacity: Math.random() * 0.55 + 0.3,
+          swingAngle: Math.random() * Math.PI * 2,
+          swingSpeed: Math.random() * 0.018 + 0.008,
+          swingRadius: Math.random() * 1.5 + 0.5
+        };
+      }
+
+      for (let i = 0; i < PETAL_COUNT; i++) {
+        petals.push(createPetal(false));
+      }
+
+      function drawPetal(petalX, petalY, petalSize, rotation) {
+        ctx.save();
+        ctx.translate(petalX, petalY);
+        ctx.rotate(rotation);
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(petalSize * 0.5, -petalSize * 0.3, petalSize, petalSize * 0.3, 0, petalSize);
+        ctx.bezierCurveTo(-petalSize, petalSize * 0.3, -petalSize * 0.5, -petalSize * 0.3, 0, 0);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      function animateSakura() {
+        ctx.clearRect(0, 0, width, height);
+
+        petals.forEach(function (petal) {
+          petal.swingAngle += petal.swingSpeed;
+          petal.x += petal.speedX + Math.sin(petal.swingAngle) * petal.swingRadius;
+          petal.y += petal.speedY;
+          petal.rotation += petal.rotationSpeed;
+
+          if (petal.y > height + 30) {
+            const newPetal = createPetal(true);
+            Object.assign(petal, newPetal);
+          }
+
+          const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, petal.size);
+          gradient.addColorStop(0, "rgba(255, 200, 220, " + petal.opacity + ")");
+          gradient.addColorStop(0.6, "rgba(255, 150, 190, " + (petal.opacity * 0.8) + ")");
+          gradient.addColorStop(1, "rgba(230, 100, 160, " + (petal.opacity * 0.4) + ")");
+
+          ctx.save();
+          ctx.translate(petal.x, petal.y);
+          ctx.rotate(petal.rotation);
+          ctx.fillStyle = gradient;
+          drawPetal(0, 0, petal.size, 0);
+          ctx.restore();
+        });
+
+        requestAnimationFrame(animateSakura);
+      }
+
+      window.addEventListener("resize", resize, { passive: true });
+      resize();
+      requestAnimationFrame(animateSakura);
+    }());
+
+    /* ============================================================
+       MODULE: CANVAS — HEARTS
+    ============================================================ */
+    (function initFloatingHearts() {
+      const canvas = document.getElementById("canvas-hearts");
+      const ctx = canvas.getContext("2d");
+
+      let width = 0;
+      let height = 0;
+      const HEART_COUNT = 12;
+      const hearts = [];
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      function createHeart(fromBottom) {
+        return {
+          x: Math.random() * width,
+          y: fromBottom ? height + 20 : Math.random() * height,
+          size: Math.random() * 14 + 8,
+          speedY: Math.random() * 0.8 + 0.4,
+          speedX: (Math.random() - 0.5) * 0.6,
+          opacity: Math.random() * 0.5 + 0.15,
+          rotation: (Math.random() - 0.5) * 0.5,
+          wobbleAngle: Math.random() * Math.PI * 2,
+          wobbleSpeed: Math.random() * 0.02 + 0.008,
+          wobbleRadius: Math.random() * 1.2 + 0.4
+        };
+      }
+
+      for (let i = 0; i < HEART_COUNT; i++) {
+        hearts.push(createHeart(false));
+      }
+
+      function drawHeart(heartSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, -heartSize * 0.25);
+        ctx.bezierCurveTo(0, -heartSize * 0.7, heartSize * 0.8, -heartSize * 0.7, heartSize * 0.8, -heartSize * 0.2);
+        ctx.bezierCurveTo(heartSize * 0.8, heartSize * 0.2, 0, heartSize * 0.6, 0, heartSize * 0.85);
+        ctx.bezierCurveTo(0, heartSize * 0.6, -heartSize * 0.8, heartSize * 0.2, -heartSize * 0.8, -heartSize * 0.2);
+        ctx.bezierCurveTo(-heartSize * 0.8, -heartSize * 0.7, 0, -heartSize * 0.7, 0, -heartSize * 0.25);
+        ctx.closePath();
+      }
+
+      function animateHearts() {
+        ctx.clearRect(0, 0, width, height);
+
+        hearts.forEach(function (heart) {
+          heart.wobbleAngle += heart.wobbleSpeed;
+          heart.x += heart.speedX + Math.sin(heart.wobbleAngle) * heart.wobbleRadius;
+          heart.y -= heart.speedY;
+
+          if (heart.y < -30) {
+            const newHeart = createHeart(true);
+            Object.assign(heart, newHeart);
+          }
+
+          ctx.save();
+          ctx.translate(heart.x, heart.y);
+          ctx.rotate(heart.rotation);
+
+          const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, heart.size);
+          gradient.addColorStop(0, "rgba(255, 140, 185, " + heart.opacity + ")");
+          gradient.addColorStop(1, "rgba(220, 50, 120, " + (heart.opacity * 0.3) + ")");
+          ctx.fillStyle = gradient;
+
+          drawHeart(heart.size);
+          ctx.fill();
+          ctx.restore();
+        });
+
+        requestAnimationFrame(animateHearts);
+      }
+
+      window.addEventListener("resize", resize, { passive: true });
+      resize();
+      requestAnimationFrame(animateHearts);
+    }());
+
+    /* ============================================================
+       MODULE: CANVAS — BUBBLES
+    ============================================================ */
+    (function initBubbles() {
+      const canvas = document.getElementById("canvas-bubbles");
+      const ctx = canvas.getContext("2d");
+
+      let width = 0;
+      let height = 0;
+      const BUBBLE_COUNT = 18;
+      const bubbles = [];
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      function createBubble(fromBottom) {
+        return {
+          x: Math.random() * width,
+          y: fromBottom ? height + 20 : Math.random() * height,
+          radius: Math.random() * 18 + 5,
+          speedY: Math.random() * 0.7 + 0.25,
+          speedX: (Math.random() - 0.5) * 0.35,
+          opacity: Math.random() * 0.18 + 0.06,
+          wobbleAngle: Math.random() * Math.PI * 2,
+          wobbleSpeed: Math.random() * 0.015 + 0.007,
+          wobbleRadius: Math.random() * 2.5 + 0.5
+        };
+      }
+
+      for (let i = 0; i < BUBBLE_COUNT; i++) {
+        bubbles.push(createBubble(false));
+      }
+
+      function animateBubbles() {
+        ctx.clearRect(0, 0, width, height);
+
+        bubbles.forEach(function (bubble) {
+          bubble.wobbleAngle += bubble.wobbleSpeed;
+          bubble.x += bubble.speedX + Math.sin(bubble.wobbleAngle) * bubble.wobbleRadius;
+          bubble.y -= bubble.speedY;
+
+          if (bubble.y < -bubble.radius * 2) {
+            const newBubble = createBubble(true);
+            Object.assign(bubble, newBubble);
+          }
+
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+
+          const gradient = ctx.createRadialGradient(
+            bubble.x - bubble.radius * 0.3,
+            bubble.y - bubble.radius * 0.3,
+            bubble.radius * 0.1,
+            bubble.x,
+            bubble.y,
+            bubble.radius
+          );
+          gradient.addColorStop(0, "rgba(255, 255, 255, " + (bubble.opacity * 2.5) + ")");
+          gradient.addColorStop(0.5, "rgba(255, 170, 210, " + bubble.opacity + ")");
+          gradient.addColorStop(1, "rgba(200, 100, 160, " + (bubble.opacity * 0.3) + ")");
+
+          ctx.fillStyle = gradient;
+          ctx.fill();
+
+          ctx.strokeStyle = "rgba(255, 200, 230, " + (bubble.opacity * 1.5) + ")";
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+          ctx.restore();
+        });
+
+        requestAnimationFrame(animateBubbles);
+      }
+
+      window.addEventListener("resize", resize, { passive: true });
+      resize();
+      requestAnimationFrame(animateBubbles);
+    }());
+
+    /* ============================================================
+       MODULE: CANVAS — MOUSE LIGHT (Lens / Glow Follow)
+    ============================================================ */
+    (function initMouseLight() {
+      const canvas = document.getElementById("canvas-mouse-light");
+      const ctx = canvas.getContext("2d");
+
+      let width = 0;
+      let height = 0;
+      let targetX = -500;
+      let targetY = -500;
+      let currentX = -500;
+      let currentY = -500;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      document.addEventListener("mousemove", function (event) {
+        targetX = event.clientX;
+        targetY = event.clientY;
+      });
+
+      function drawMouseLight() {
+        currentX += (targetX - currentX) * 0.07;
+        currentY += (targetY - currentY) * 0.07;
+
+        ctx.clearRect(0, 0, width, height);
+
+        const gradient = ctx.createRadialGradient(currentX, currentY, 0, currentX, currentY, 260);
+        gradient.addColorStop(0, "rgba(255, 120, 180, 0.18)");
+        gradient.addColorStop(0.4, "rgba(200, 80, 150, 0.06)");
+        gradient.addColorStop(1, "transparent");
+
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, width, height);
+
+        requestAnimationFrame(drawMouseLight);
+      }
+
+      window.addEventListener("resize", resize, { passive: true });
+      resize();
+      requestAnimationFrame(drawMouseLight);
+    }());
+
+  </script>
+</body>
+</html>
