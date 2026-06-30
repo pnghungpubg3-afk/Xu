@@ -1402,12 +1402,9 @@
     (function applyConfigToDOM() {
       // Subtitle — dùng innerHTML để giữ <span> xuống dòng đẹp
       const subtitleEl = document.querySelector(".hero-subtitle");
-      if (subtitleEl) {
-        subtitleEl.innerHTML =
-          '<h2 class="hero-subtitle-small">là mặt trời nhỏ 💖</h2>' + 
-          'Cám ơn bạn đã luôn ủng hộ Xu Xu'
-          ;
-      }
+if (subtitleEl) {
+    subtitleEl.textContent = "Cám ơn bạn đã luôn ủng hộ Xu Xu";
+}
 
       // Social links
       const fbLink = document.querySelector(".social-btn--facebook");
