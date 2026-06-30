@@ -1348,6 +1348,10 @@
 </head>
 <body>
 
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://donatehz.online/music.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- ============================================================
        CUSTOM CURSOR
   ============================================================ -->
@@ -1395,6 +1399,9 @@
   <div id="controls-bar">
     <button class="control-btn" id="theme-toggle-btn" aria-label="Chuyển giao diện sáng/tối" title="Sáng / Tối">
       🌙
+    </button>
+    <button class="control-btn" id="music-btn" aria-label="Nhạc" title="Bật / Tắt nhạc">
+      🔇
     </button>
   </div>
 
@@ -1602,8 +1609,19 @@
         facebook: "https://www.facebook.com/share/1DjpDqQ3Pc/?mibextid=wwXIfr",
         zalo: "https://zalo.me/0397124855",
         tiktok: "https://www.tiktok.com/@.xuchintui"
+      },
+      music: {
+        url: "https://donatehz.online/music.mp3"
       }
     };
+
+    (function applyMusicConfig() {
+      const bgMusicSource = document.querySelector("#bgMusic source");
+      if (bgMusicSource) {
+        bgMusicSource.src = CONFIG.music.url;
+        document.getElementById("bgMusic").load();
+      }
+    }());
 
     /* ============================================================
        MODULE: APPLY CONFIG TO DOM (single source of truth)
@@ -2264,7 +2282,60 @@ if (subtitleEl) {
       requestAnimationFrame(animateBubbles);
     }());
 
+    /* ============================================================
+       MODULE: BACKGROUND MUSIC
+    ============================================================ */
+    (function initBackgroundMusic() {
+      const bgMusic = document.getElementById("bgMusic");
+      const musicBtn = document.getElementById("music-btn");
+      if (!bgMusic || !musicBtn) return;
 
+      function setIcon(isPlaying) {
+        musicBtn.textContent = isPlaying ? "🔊" : "🔇";
+      }
+
+      function playMusic() {
+        bgMusic.play().catch(function () {});
+        localStorage.setItem("music", "on");
+        setIcon(true);
+      }
+
+      function pauseMusic() {
+        bgMusic.pause();
+        localStorage.setItem("music", "off");
+        setIcon(false);
+      }
+
+      // Khởi tạo icon theo trạng thái đã lưu
+      const savedMusic = localStorage.getItem("music");
+	setIcon(savedMusic === "on");
+
+      // Nếu trước đó đã bật nhạc, tự phát khi có tương tác đầu tiên của người dùng
+      function tryAutoplayOnFirstInteraction() {
+        if (localStorage.getItem("music") === "on") {
+          playMusic();
+        }
+        document.removeEventListener("click", tryAutoplayOnFirstInteraction);
+        document.removeEventListener("touchstart", tryAutoplayOnFirstInteraction);
+      }
+
+      document.addEventListener("pointerdown", tryAutoplayOnFirstInteraction, {
+    once: true,
+    passive: true
+});
+
+      musicBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        if (bgMusic.paused) {
+          playMusic();
+        } else {
+          pauseMusic();
+        }
+      });
+
+      bgMusic.addEventListener("play", function () { setIcon(true); });
+      bgMusic.addEventListener("pause", function () { setIcon(false); });
+    }());
 
   </script>
 </body>
