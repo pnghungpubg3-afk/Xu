@@ -786,6 +786,203 @@
     }
 
     /* ============================================================
+       SOCIAL FLOAT BAR — iOS 26 GLASSMORPHISM PREMIUM (override)
+    ============================================================ */
+
+    #social-float {
+      gap: 16px;
+    }
+
+    .social-item {
+      position: relative;
+    }
+
+    /* Reset transform/animation cũ trên .social-btn để tránh xung đột với hiệu ứng mới */
+    .social-btn {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      isolation: isolate;
+      overflow: visible;
+
+      /* Glass core */
+      background: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0.22) 0%,
+        rgba(255, 255, 255, 0.10) 50%,
+        rgba(255, 255, 255, 0.06) 100%
+      );
+      backdrop-filter: blur(22px) saturate(180%);
+      -webkit-backdrop-filter: blur(22px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+
+      box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.22),
+        0 2px 6px rgba(0, 0, 0, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5),
+        inset 0 -6px 10px rgba(255, 255, 255, 0.05);
+
+      animation: ios26-breathe 2.6s ease-in-out infinite;
+      transition:
+        transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.45s ease,
+        filter 0.35s ease;
+      will-change: transform;
+    }
+
+    .social-btn:nth-child(1) { animation-delay: 0s; }
+
+    /* Icon riêng */
+    .social-btn__icon {
+      position: relative;
+      z-index: 2;
+      display: block;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
+    }
+
+    /* Vòng sáng xoay quanh nút (glow ring) */
+    .social-btn__ring {
+      position: absolute;
+      inset: -3px;
+      z-index: 0;
+      border-radius: 50%;
+      padding: 2px;
+      background: conic-gradient(
+        from 0deg,
+        #ff80b5,
+        #c084fc,
+        #80c8ff,
+        #ff80b5
+      );
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.65;
+      animation: ios26-ring-spin 5s linear infinite;
+      pointer-events: none;
+    }
+
+    /* Lớp phản chiếu sáng phía trên (reflection) */
+    .social-btn__sheen {
+      position: absolute;
+      top: 3%;
+      left: 12%;
+      width: 76%;
+      height: 38%;
+      z-index: 1;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.55) 0%,
+        rgba(255, 255, 255, 0.12) 70%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes ios26-breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes ios26-ring-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Hover premium */
+    .social-btn:hover {
+      animation-play-state: paused;
+      transform: translateY(-6px) scale(1.15);
+    }
+
+    .social-btn:hover .social-btn__icon {
+      transform: scale(1.08);
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3)) brightness(1.08);
+    }
+
+    .social-btn:hover .social-btn__ring {
+      opacity: 1;
+      animation-duration: 2.4s;
+    }
+
+    /* Active / click */
+    .social-btn:active {
+      transform: translateY(-2px) scale(0.95);
+      transition: transform 0.18s ease-out;
+    }
+
+    /* Glow màu theo thương hiệu khi hover */
+    .social-btn--facebook:hover {
+      box-shadow:
+        0 10px 30px rgba(24, 119, 242, 0.55),
+        0 0 24px rgba(24, 119, 242, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.55);
+      background: linear-gradient(
+        160deg,
+        rgba(24, 119, 242, 0.22) 0%,
+        rgba(255, 255, 255, 0.10) 60%
+      );
+    }
+
+    .social-btn--zalo:hover {
+      box-shadow:
+        0 10px 30px rgba(0, 104, 255, 0.5),
+        0 0 24px rgba(0, 104, 255, 0.32),
+        inset 0 1px 1px rgba(255, 255, 255, 0.55);
+      background: linear-gradient(
+        160deg,
+        rgba(0, 104, 255, 0.20) 0%,
+        rgba(255, 255, 255, 0.10) 60%
+      );
+    }
+
+    .social-btn--tiktok:hover {
+      box-shadow:
+        0 10px 30px rgba(255, 0, 80, 0.45),
+        0 0 24px rgba(0, 200, 255, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.55);
+      background: linear-gradient(
+        160deg,
+        rgba(255, 0, 80, 0.16) 0%,
+        rgba(0, 200, 255, 0.10) 60%
+      );
+    }
+
+    /* Tooltip giữ nguyên vị trí nhưng tinh chỉnh nhẹ để khớp size nút mới */
+    .social-tooltip {
+      right: 64px;
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .social-btn {
+        width: 46px;
+        height: 46px;
+      }
+      .social-btn__icon svg,
+      .social-btn__icon {
+        transform: scale(0.92);
+      }
+    }
+
+    /* Giảm động cho người dùng nhạy cảm chuyển động */
+    @media (prefers-reduced-motion: reduce) {
+      .social-btn,
+      .social-btn__ring {
+        animation: none !important;
+      }
+    }
+
+    /* ============================================================
        POPUP OVERLAY
     ============================================================ */
     #popup-overlay {
@@ -1103,12 +1300,6 @@
         right: 12px;
       }
 
-      .social-btn {
-        width: 42px;
-        height: 42px;
-        font-size: 16px;
-      }
-
       .social-tooltip { display: none; }
     }
 
@@ -1211,24 +1402,42 @@
   <button id="back-to-top" aria-label="Về đầu trang" title="Về đầu trang">↑</button>
 
   <!-- ============================================================
-       SOCIAL FLOAT BAR
+       SOCIAL FLOAT BAR — iOS 26 Glassmorphism Premium
   ============================================================ -->
   <nav id="social-float" aria-label="Mạng xã hội">
     <div class="social-item">
       <a class="social-btn social-btn--facebook" href="https://www.facebook.com/share/1DjpDqQ3Pc/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <span class="social-btn__ring" aria-hidden="true"></span>
+        <span class="social-btn__sheen" aria-hidden="true"></span>
+        <svg class="social-btn__icon" width="22" height="22" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M36 18C36 8.0589 27.9411 0 18 0C8.0589 0 0 8.0589 0 18C0 26.9156 6.43847 34.3034 14.8909 35.7864V22.8984H10.7672V18H14.8909V14.4441C14.8909 10.3284 17.4694 8.0589 21.1944 8.0589C22.9788 8.0589 24.6328 8.20336 25.0833 8.26313V12.7102H22.5755C20.5808 12.7102 20.0883 13.6845 20.0883 15.0014V18H24.9844L24.2128 22.8984H20.0883V35.7864C28.5616 34.3034 36 26.9156 36 18Z" fill="#1877F2"/>
+          <path d="M24.9844 22.8984L25.7559 18H20.8597V15.0014C20.8597 13.6845 21.3523 12.7102 23.3469 12.7102H25.8547V8.26313C25.4042 8.20336 23.7503 8.0589 21.9658 8.0589C18.2408 8.0589 15.6623 10.3284 15.6623 14.4441V18H11.5387V22.8984H15.6623V35.7864C16.4239 35.9279 17.2042 36 18 36C18.6783 36 19.343 35.9457 19.9909 35.8434V22.8984H24.9844Z" fill="#fff"/>
+        </svg>
       </a>
       <span class="social-tooltip">Facebook</span>
     </div>
+
     <div class="social-item">
       <a class="social-btn social-btn--zalo" href="https://zalo.me/0397124855" target="_blank" rel="noopener noreferrer" aria-label="Zalo">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><text x="2" y="17" font-size="13" font-weight="bold">Z</text></svg>
+        <span class="social-btn__ring" aria-hidden="true"></span>
+        <span class="social-btn__sheen" aria-hidden="true"></span>
+        <svg class="social-btn__icon" width="24" height="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4C12.954 4 4 12.954 4 24c0 5.07 1.89 9.694 5 13.222V44l6.77-3.385C18.06 41.5 20.97 42 24 42c11.046 0 20-8.954 20-20S35.046 4 24 4Z" fill="#0068FF"/>
+          <text x="24" y="29.5" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Zalo</text>
+        </svg>
       </a>
       <span class="social-tooltip">Zalo</span>
     </div>
+
     <div class="social-item">
       <a class="social-btn social-btn--tiktok" href="https://www.tiktok.com/@.xuchintui" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+        <span class="social-btn__ring" aria-hidden="true"></span>
+        <span class="social-btn__sheen" aria-hidden="true"></span>
+        <svg class="social-btn__icon" width="22" height="22" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+          <path d="M168 0c4.4 28.6 24.4 50.6 53 56.6v29.6c-15.6-.4-30.2-5.4-43-13.8v76.4c0 47.6-38.6 85.8-86.4 85.8C44.6 234.6 6 196.4 6 148.8c0-46.6 37-84.4 83.2-86V92.6c-31 1.6-55.6 27.2-55.6 58.4 0 32.2 26.2 58.2 58.4 58.2 32.2 0 58.4-26 58.4-58.2V0h17.6Z" fill="#EE1D52"/>
+          <path d="M150 0c4.4 28.6 24.4 50.6 53 56.6v29.6c-15.6-.4-30.2-5.4-43-13.8v76.4c0 47.6-38.6 85.8-86.4 85.8C26.6 234.6-12 196.4-12 148.8c0-46.6 37-84.4 83.2-86V92.6c-31 1.6-55.6 27.2-55.6 58.4 0 32.2 26.2 58.2 58.4 58.2 32.2 0 58.4-26 58.4-58.2V0h17.6Z" fill="#69C9D0" transform="translate(18,0)"/>
+          <path d="M159 0c4.4 28.6 24.4 50.6 53 56.6v29.6c-15.6-.4-30.2-5.4-43-13.8v76.4c0 47.6-38.6 85.8-86.4 85.8C35.6 234.6-3 196.4-3 148.8c0-46.6 37-84.4 83.2-86V92.6c-31 1.6-55.6 27.2-55.6 58.4 0 32.2 26.2 58.2 58.4 58.2 32.2 0 58.4-26 58.4-58.2V0h17.6Z" fill="#000" transform="translate(9,0)"/>
+        </svg>
       </a>
       <span class="social-tooltip">TikTok</span>
     </div>
@@ -1565,28 +1774,6 @@ if (subtitleEl) {
 
       slotCardBtn.addEventListener("click", function (event) {
         createRipple(event, slotCardBtn);
-      });
-    }());
-
-    /* ============================================================
-       MODULE: SOCIAL MAGNET EFFECT
-    ============================================================ */
-    (function initSocialMagnet() {
-      const socialButtons = document.querySelectorAll(".social-btn");
-
-      socialButtons.forEach(function (btn) {
-        btn.addEventListener("mousemove", function (event) {
-          const rect = btn.getBoundingClientRect();
-          const centerX = rect.left + rect.width / 2;
-          const centerY = rect.top + rect.height / 2;
-          const deltaX = (event.clientX - centerX) * 0.35;
-          const deltaY = (event.clientY - centerY) * 0.35;
-          btn.style.transform = "translate(" + deltaX + "px, " + deltaY + "px) scale(1.18)";
-        });
-
-        btn.addEventListener("mouseleave", function () {
-          btn.style.transform = "";
-        });
       });
     }());
 
