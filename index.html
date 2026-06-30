@@ -121,11 +121,7 @@
       cursor: auto;
     }
 
-    /* Custom cursor chỉ ẩn cursor gốc khi hover có chuột (desktop) */
-    @media (pointer: fine) {
-      body { cursor: none; }
-      a, button { cursor: none; }
-    }
+
 
     a {
       text-decoration: none;
@@ -143,48 +139,7 @@
       display: block;
     }
 
-    /* ============================================================
-       CUSTOM CURSOR
-    ============================================================ */
-    #cursor-dot {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--pink-400);
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.08s ease, background 0.2s ease;
-      mix-blend-mode: normal;
-      box-shadow: 0 0 16px 4px rgba(255, 77, 153, 0.7);
-    }
 
-    #cursor-ring {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 128, 181, 0.5);
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform 0.18s var(--transition-ease), width 0.25s var(--transition-ease), height 0.25s var(--transition-ease), border-color 0.2s ease;
-    }
-
-    body.cursor-hover #cursor-ring {
-      width: 56px;
-      height: 56px;
-      border-color: var(--pink-400);
-    }
-
-    body.cursor-hover #cursor-dot {
-      transform: translate(-50%, -50%) scale(0.5);
-    }
 
     /* ============================================================
        LOADING SCREEN
@@ -325,8 +280,7 @@
     #canvas-particles,
     #canvas-sakura,
     #canvas-hearts,
-    #canvas-bubbles,
-    #canvas-mouse-light {
+    #canvas-bubbles {
       position: fixed;
       inset: 0;
       pointer-events: none !important;
@@ -339,7 +293,6 @@
     #canvas-sakura    { z-index: 4; }
     #canvas-hearts    { z-index: 5; }
     #canvas-bubbles   { z-index: 6; }
-    #canvas-mouse-light { z-index: 7; mix-blend-mode: screen; opacity: 0.45; }
 
     /* ============================================================
        PAGE WRAPPER
@@ -969,9 +922,7 @@
       font-weight: 600;
       padding: 3px 10px;
       border-radius: var(--radius-full);
-      cursor: none;
-      transition: background 0.2s ease, transform 0.2s ease;
-      letter-spacing: 0.04em;
+      cursor: pointer;
     }
 
     .popup-copy-mini:hover {
@@ -992,7 +943,7 @@
       font-weight: 600;
       letter-spacing: 0.04em;
       transition: transform 0.3s var(--transition-smooth), box-shadow 0.3s ease;
-      cursor: none;
+      cursor: pointer;
       position: relative;
       overflow: hidden;
     }
@@ -1034,7 +985,7 @@
       background: rgba(255, 255, 255, 0.07);
       color: rgba(255, 255, 255, 0.5);
       font-size: 16px;
-      cursor: none;
+      cursor: pointer;
       transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
@@ -1188,7 +1139,7 @@
         transition-duration: 0.01ms !important;
       }
       #canvas-aurora, #canvas-particles, #canvas-sakura,
-      #canvas-hearts, #canvas-bubbles, #canvas-mouse-light {
+      #canvas-hearts, #canvas-bubbles {
         display: none;
       }
     }
@@ -1210,8 +1161,7 @@
   <!-- ============================================================
        CUSTOM CURSOR
   ============================================================ -->
-  <div id="cursor-dot" aria-hidden="true"></div>
-  <div id="cursor-ring" aria-hidden="true"></div>
+
 
   <!-- ============================================================
        SCROLL PROGRESS BAR
@@ -1247,7 +1197,7 @@
   <canvas id="canvas-sakura" aria-hidden="true"></canvas>
   <canvas id="canvas-hearts" aria-hidden="true"></canvas>
   <canvas id="canvas-bubbles" aria-hidden="true"></canvas>
-  <canvas id="canvas-mouse-light" aria-hidden="true"></canvas>
+
 
   <!-- ============================================================
        CONTROLS
@@ -1549,58 +1499,7 @@
       });
     }
 
-    /* ============================================================
-       MODULE: CUSTOM CURSOR
-    ============================================================ */
-    (function initCustomCursor() {
-      const cursorDot = document.getElementById("cursor-dot");
-      const cursorRing = document.getElementById("cursor-ring");
 
-      let mouseX = 0;
-      let mouseY = 0;
-      let ringX = 0;
-      let ringY = 0;
-      let animFrameId = null;
-
-      function updateCursorPosition() {
-        cursorDot.style.left = mouseX + "px";
-        cursorDot.style.top = mouseY + "px";
-
-        ringX += (mouseX - ringX) * 0.14;
-        ringY += (mouseY - ringY) * 0.14;
-
-        cursorRing.style.left = ringX + "px";
-        cursorRing.style.top = ringY + "px";
-
-        animFrameId = requestAnimationFrame(updateCursorPosition);
-      }
-
-      document.addEventListener("mousemove", function (event) {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-      });
-
-      document.querySelectorAll("a, button, .action-card, .social-btn, .popup-copy-mini").forEach(function (el) {
-        el.addEventListener("mouseenter", function () {
-          document.body.classList.add("cursor-hover");
-        });
-        el.addEventListener("mouseleave", function () {
-          document.body.classList.remove("cursor-hover");
-        });
-      });
-
-      document.addEventListener("mouseleave", function () {
-        cursorDot.style.opacity = "0";
-        cursorRing.style.opacity = "0";
-      });
-
-      document.addEventListener("mouseenter", function () {
-        cursorDot.style.opacity = "1";
-        cursorRing.style.opacity = "1";
-      });
-
-      animFrameId = requestAnimationFrame(updateCursorPosition);
-    }());
 
     /* ============================================================
        MODULE: THEME TOGGLE (Light / Dark)
@@ -1658,6 +1557,14 @@
       donateCard.addEventListener("click", function (event) {
         createRipple(event, donateCard);
       });
+
+      /* Safari iOS fix: target="_blank" trên <a> đôi khi bị block.
+         Dùng touchend để navigate chủ động trong cùng luồng gesture. */
+      donateCard.addEventListener("touchend", function (event) {
+        event.preventDefault();
+        createRipple(event.changedTouches[0] || event, donateCard);
+        window.location.href = donateCard.href;
+      }, { passive: false });
 
       slotCardBtn.addEventListener("click", function (event) {
         createRipple(event, slotCardBtn);
@@ -2173,51 +2080,7 @@
       requestAnimationFrame(animateBubbles);
     }());
 
-    /* ============================================================
-       MODULE: CANVAS — MOUSE LIGHT (Lens / Glow Follow)
-    ============================================================ */
-    (function initMouseLight() {
-      const canvas = document.getElementById("canvas-mouse-light");
-      const ctx = canvas.getContext("2d");
 
-      let width = 0;
-      let height = 0;
-      let targetX = -500;
-      let targetY = -500;
-      let currentX = -500;
-      let currentY = -500;
-
-      function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-      }
-
-      document.addEventListener("mousemove", function (event) {
-        targetX = event.clientX;
-        targetY = event.clientY;
-      });
-
-      function drawMouseLight() {
-        currentX += (targetX - currentX) * 0.07;
-        currentY += (targetY - currentY) * 0.07;
-
-        ctx.clearRect(0, 0, width, height);
-
-        const gradient = ctx.createRadialGradient(currentX, currentY, 0, currentX, currentY, 260);
-        gradient.addColorStop(0, "rgba(255, 120, 180, 0.18)");
-        gradient.addColorStop(0.4, "rgba(200, 80, 150, 0.06)");
-        gradient.addColorStop(1, "transparent");
-
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, width, height);
-
-        requestAnimationFrame(drawMouseLight);
-      }
-
-      window.addEventListener("resize", resize, { passive: true });
-      resize();
-      requestAnimationFrame(drawMouseLight);
-    }());
 
   </script>
 </body>
