@@ -499,28 +499,27 @@
       }
     }
 
-    .hero-subtitle {
-      font-family: var(--font-body);
-      font-size: clamp(0.92rem, 2.5vw, 1.12rem);
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.82);
-      text-align: center;
-      letter-spacing: 0.04em;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-      padding: 0 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
+    .hero-subtitle{
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,.88);
+    text-align: center;
+    line-height: 1.8;
+    letter-spacing: .02em;
+}
+    .hero-subtitle-small{
+    font-family: var(--font-script);
+    font-size: clamp(3rem, 8vw, 5.8rem);
+    font-weight: 700;
+    color: #ffd8ec;
+    line-height: 1;
+    text-align: center;
 
-    .hero-subtitle-small {
-      font-family: var(--font-script);
-      font-size: clamp(0.75rem, 2vw, 0.92rem);
-      font-weight: 400;
-      color: rgba(255, 200, 225, 0.75);
-      letter-spacing: 0.06em;
-    }
+    text-shadow:
+        0 0 20px rgba(255,170,210,.8),
+        0 0 40px rgba(255,77,153,.5);
+}
 
     .hero-badge {
       display: inline-flex;
@@ -1260,9 +1259,9 @@
 
     <section class="reveal reveal-delay-2" style="text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px;">
       <h1 class="hero-title">Xu Xu</h1>
+      <h2 class="hero-subtitle-small">là mặt trời nhỏ 💖</h2>
       <p class="hero-subtitle">
         Cám ơn bạn đã luôn ủng hộ Xu Xu
-        <span class="hero-subtitle-small">là mặt trời nhỏ 💖</span>
       </p>
     </section>
 
@@ -1405,8 +1404,9 @@
       const subtitleEl = document.querySelector(".hero-subtitle");
       if (subtitleEl) {
         subtitleEl.innerHTML =
-          'Cám ơn bạn đã luôn ủng hộ Xu Xu' +
-          '<span class="hero-subtitle-small">là mặt trời nhỏ 💖</span>';
+          '<h2 class="hero-subtitle-small">là mặt trời nhỏ 💖</h2>' + 
+          'Cám ơn bạn đã luôn ủng hộ Xu Xu'
+          ;
       }
 
       // Social links
